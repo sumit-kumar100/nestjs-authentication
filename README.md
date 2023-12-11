@@ -7,7 +7,7 @@
 
 ## Description
 
-NestJS Authentication
+NestJS Authentication with roles & permissions
 
 ## Features
 
@@ -53,7 +53,7 @@ $ npm run start:prod
 
 ## Swagger documentation
 
-- [localhost:3000/docs](http://localhost:3007/api-docs)
+- [localhost:3007/api-docs](http://localhost:3007/api-docs)
 
 ## Author
 
