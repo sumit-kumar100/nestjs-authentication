@@ -13,7 +13,6 @@ const orm = async (): Promise<DataSource> => {
   const dbConfig = {
     ...config.db,
     entities: dbSchema.entities,
-    migrations: dbSchema.migrations,
     seeds: dbSchema.seeds,
   };
 
@@ -23,11 +22,9 @@ const orm = async (): Promise<DataSource> => {
 export default orm();
 
 export const schemas = async (): Promise<{
-  migrations: any[];
   entities: any[];
   seeds: any[];
 }> => {
-  let migrations = [];
   let entities = [];
   let seeds = [];
 
@@ -44,13 +41,13 @@ export const schemas = async (): Promise<{
           await readFilesRecursively(entryPath);
         }
 
-        const file = entry.name.split(/[.-]/);
+        const file = entry.name.split(".");
         const fileType = file.slice(-2, -1)[0];
 
         if (
           entry.isFile() &&
           file.length > 2 &&
-          ["entity", "seeder", "migration"].includes(fileType)
+          ["entity", "seeder"].includes(fileType)
         ) {
           const module = await import(entryPath);
           const moduleExports = Object.values(module);
@@ -60,9 +57,6 @@ export const schemas = async (): Promise<{
               break;
             case "entity":
               entities = [...entities, ...moduleExports];
-              break;
-            case "migration":
-              migrations = [...migrations, ...moduleExports];
               break;
             default:
               break;
@@ -76,5 +70,5 @@ export const schemas = async (): Promise<{
 
   await readFilesRecursively(path.join(__dirname, "../"));
 
-  return { migrations, entities, seeds };
+  return { entities, seeds };
 };
