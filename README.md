@@ -12,7 +12,7 @@ NestJS Authentication with roles & permissions
 ## Features
 
 1. Register
-2. Login
+2. Login using access and refresh token.
 3. Show profile
 4. Grant roles and permissions
 6. Logout
