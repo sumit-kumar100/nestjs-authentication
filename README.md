@@ -7,18 +7,18 @@
 
 ## Description
 
-NestJS Authentication with roles & permissions
+NestJS Authentication with Authorization
 
 ## Features
 
 1. Register
 2. Access and Refresh token
-3. Show users
-4. Show user profile
+3. Show user profile
+4. Show users list
 5. Reset user password
 6. Grant user permissions
-7. Update user profile
-8. Delete user profile
+7. Update user
+8. Delete user
 
 ## Technologies stack:
 
