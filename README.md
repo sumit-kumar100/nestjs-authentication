@@ -12,10 +12,13 @@ NestJS Authentication with roles & permissions
 ## Features
 
 1. Register
-2. Login using access and refresh token.
-3. Show profile
-4. Grant roles and permissions
-6. Logout
+2. Access and Refresh token
+3. Show users
+4. Show user profile
+5. Reset user password
+6. Grant user permissions
+7. Update user profile
+8. Delete user profile
 
 ## Technologies stack:
 
