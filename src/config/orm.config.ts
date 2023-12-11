@@ -8,7 +8,7 @@ dotenv.config();
 const orm = async (): Promise<DataSource> => {
   const config = <{ db: DataSourceOptions }>await configuration();
 
-  const dbSchema = await schema();
+  const dbSchema = await schemas();
 
   const dbConfig = {
     ...config.db,
@@ -22,7 +22,7 @@ const orm = async (): Promise<DataSource> => {
 
 export default orm();
 
-export const schema = async (): Promise<{
+export const schemas = async (): Promise<{
   migrations: any[];
   entities: any[];
   seeds: any[];
@@ -40,7 +40,7 @@ export const schema = async (): Promise<{
       for (const entry of entries) {
         const entryPath = path.join(directoryPath, entry.name);
 
-        if (entry.isDirectory() && entry.name !== "database") {
+        if (entry.isDirectory()) {
           await readFilesRecursively(entryPath);
         }
 

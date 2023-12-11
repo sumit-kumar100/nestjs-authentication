@@ -3,7 +3,7 @@ import { NestFactory } from "@nestjs/core";
 import { Logger, LoggerErrorInterceptor } from "nestjs-pino";
 import { middleware } from "./app.middleware";
 import { AppModule } from "./app.module";
-import { initSwagger } from "./swagger";
+import { initAppSwagger } from "./app.docs";
 
 async function initApp(): Promise<string> {
   const isProduction = process.env.NODE_ENV === "production";
@@ -22,7 +22,7 @@ async function initApp(): Promise<string> {
 
   middleware(app);
 
-  initSwagger(app);
+  initAppSwagger(app);
 
   await app.listen(3007);
 

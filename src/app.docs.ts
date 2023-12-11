@@ -1,23 +1,24 @@
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { INestApplication } from "@nestjs/common";
 
-export async function initSwagger(app: INestApplication): Promise<void> {
+export async function initAppSwagger(app: INestApplication): Promise<void> {
   const options = new DocumentBuilder()
-    .setTitle("NestJS-NextJS User-CRUD")
+    .setTitle("Nest Auth")
     .setDescription(
-      "Create, Read, Update, and Delete Users in a NestJS Application.",
+      "NestJS Authentication and Authorization",
     )
     .setVersion("1.0")
     .addBearerAuth({
       description: `Please enter token in following format: Bearer <JWT>`,
-      name: 'Authorization',
-      bearerFormat: 'Bearer',
-      scheme: 'Bearer',
-      type: 'http',
-      in: 'Header'
+      name: "Authorization",
+      bearerFormat: "Bearer",
+      scheme: "Bearer",
+      type: "http",
+      in: "Header",
     })
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
+
   SwaggerModule.setup("api-docs", app, document);
 }

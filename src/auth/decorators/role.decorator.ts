@@ -5,4 +5,4 @@ export enum UserRoles {
   "user" = "user",
 }
 
-export const RoleAllowed = (role: UserRoles[]) => SetMetadata("roles", role);
+export const RoleAllowed = (roles: UserRoles[]) => SetMetadata("roles", roles);
