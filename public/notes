@@ -1,0 +1,9 @@
+// Production Code Sample Project CodeSandBox 
+// https://codesandbox.io/p/devbox/nestjs-project-structure-esx6h
+
+// Use the global validation pipe
+app.useGlobalPipes(
+  new ValidationPipe({
+    transform: true, // Automatically transform request payload to DTO instance
+  }),
+);
