@@ -61,7 +61,7 @@ export class UserController {
     return this.service.create(body);
   }
 
-  @ApiBearerAuth("Authorization")
+  @ApiBearerAuth()
   @ApiConsumes("application/json")
   @ApiOperation({ description: "get current session User" })
   @ApiNotFoundResponse({ description: NO_ENTITY_FOUND })
@@ -76,7 +76,7 @@ export class UserController {
     return user;
   }
 
-  @ApiBearerAuth("Authorization")
+  @ApiBearerAuth()
   @ApiOperation({
     description: "get all Users",
   })
@@ -96,7 +96,7 @@ export class UserController {
     return this.service.findAll(query);
   }
 
-  @ApiBearerAuth("Authorization")
+  @ApiBearerAuth()
   @ApiNotFoundResponse({ description: NO_ENTITY_FOUND })
   @ApiForbiddenResponse({ description: UNAUTHORIZED_REQUEST })
   @ApiUnprocessableEntityResponse({ description: BAD_REQUEST })
@@ -118,7 +118,7 @@ export class UserController {
     return this.service.updateUserPassword(id, data);
   }
 
-  @ApiBearerAuth("Authorization")
+  @ApiBearerAuth()
   @ApiNotFoundResponse({ description: NO_ENTITY_FOUND })
   @ApiForbiddenResponse({ description: UNAUTHORIZED_REQUEST })
   @ApiUnprocessableEntityResponse({ description: BAD_REQUEST })
@@ -140,7 +140,7 @@ export class UserController {
     return this.service.updateUserPermissions(id, data);
   }
 
-  @ApiBearerAuth("Authorization")
+  @ApiBearerAuth()
   @ApiOperation({ description: "user update api " })
   @UseGuards(AuthGuard)
   @HttpCode(HttpStatus.CREATED)
@@ -152,7 +152,7 @@ export class UserController {
     return this.service.update(id, body);
   }
 
-  @ApiBearerAuth("Authorization")
+  @ApiBearerAuth()
   @ApiOperation({ description: "user delete api " })
   @UseGuards(AuthGuard)
   @HttpCode(HttpStatus.CREATED)

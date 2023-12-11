@@ -8,7 +8,14 @@ export async function initSwagger(app: INestApplication): Promise<void> {
       "Create, Read, Update, and Delete Users in a NestJS Application.",
     )
     .setVersion("1.0")
-    .addBearerAuth()
+    .addBearerAuth({
+      description: `Please enter token in following format: Bearer <JWT>`,
+      name: 'Authorization',
+      bearerFormat: 'Bearer',
+      scheme: 'Bearer',
+      type: 'http',
+      in: 'Header'
+    })
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
