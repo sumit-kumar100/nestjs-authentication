@@ -7,8 +7,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "start": "node dist/src/app",
+    "start": "nest start",
     "start:dev": "nest start --watch",
+    "start:prod": "node dist/src/app",
     "start:debug": "nest start --debug --watch",
     "typeorm": "nest build && typeorm-ts-node-commonjs -d dist/src/config/orm.config",
     "typeorm-extenstion": "nest build && ts-node ./node_modules/typeorm-extension/bin/cli.cjs -d dist/src/config/orm.config",
