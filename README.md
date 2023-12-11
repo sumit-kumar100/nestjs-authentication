@@ -7,21 +7,21 @@
 
 ## Description
 
-NestJS Authentication without Passport using Bcrypt, JWT and Redis
+NestJS Authentication
 
 ## Features
 
 1. Register
 2. Login
 3. Show profile
-4. Logout
+4. Grant roles and permissions
+6. Logout
 
 ## Technologies stack:
 
 - JWT
 - Bcrypt
-- TypeORM + MySQL
-- Redis
+- TypeORM + Postgresql
 - Docker
 
 ## Setup
@@ -51,32 +51,16 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Docker for development
-
-```bash
-# start the application
-$ npm run docker:up
-
-# stop the application
-$ npm run docker:down
-```
-
 ## Swagger documentation
 
-- [localhost:3000/docs](http://localhost:3000/docs)
-
-## References
-
-- [NestJS Authentication without Passport](https://trilon.io/blog/nestjs-authentication-without-passport)
-- [NestJS, Redis and Postgres local development with Docker Compose](https://www.tomray.dev/nestjs-docker-compose-postgres)
+- [localhost:3000/docs](http://localhost:3007/api-docs)
 
 ## Author
 
-👤 **Anil Ahir**
+👤 **Sumit Kumar**
 
-- Twitter: [@anilahir220](https://twitter.com/anilahir220)
-- Github: [@anilahir](https://github.com/anilahir)
-- LinkedIn: [@anilahir](https://www.linkedin.com/in/anilahir)
+- Github: [@sumit](https://github.com/sumit-kumar100)
+- LinkedIn: [@sumit](https://www.linkedin.com/in/sumit-kumar100)
 
 ## Show your support
 
