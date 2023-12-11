@@ -22,7 +22,6 @@ NestJS Authentication with roles & permissions
 - JWT
 - Bcrypt
 - TypeORM + Postgresql
-- Docker
 
 ## Setup
 
